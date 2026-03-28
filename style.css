@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+/* =====================
+   Custom Properties
+   ===================== */
+
+:root {
+  /* Colors - Primary */
+  --color-blue-500: hsl(223, 87%, 63%);
+
+  /* Colors - Secondary */
+  --color-blue-200: hsl(223, 100%, 88%);
+  --color-red-400: hsl(354, 100%, 66%);
+
+  /* Colors - Neutral */
+  --color-gray-400: hsl(0, 0%, 59%);
+  --color-blue-950: hsl(209, 33%, 12%);
+
+  /* Typography */
+  --font-family: 'Libre Franklin', sans-serif;
+  --font-weight-light: 300;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-size-body: 20px;
+
+  /* Breakpoints (for reference in comments) */
+  /* Mobile: 375px | Desktop: 1440px */
+}
+
+/* =====================
+   Base Reset
+   ===================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-light);
+  color: var(--color-blue-950);
+}
