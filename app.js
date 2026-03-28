@@ -17,17 +17,28 @@ const validateEmail = (email) => {
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    if(emailInput.value === ""){
-        errorMsg.textContent = "Whoops! It looks like you forgot to add your email"
-        errorMsg.classList.remove('hidden');
-        return
-    }
-    if(!validateEmail(emailInput.value)) {
-        errorMsg.textContent = "Whoops! Please enter a valid email"
-        errorMsg.classList.remove('hidden');
-        return
-    } 
-    errorMsg.classList.add('hidden');
-    console.log('submitted')
+    validateInput();
     
 })
+
+function setError(message) {
+    errorMsg.textContent = message;
+    errorMsg.classList.remove('hidden');
+}
+
+function successState() {
+    errorMsg.classList.add('hidden');
+}
+
+function validateInput() {
+    const emailValue = emailInput.value.trim();
+
+    if(emailValue === "") {
+        setError("Whoops! It looks like you forgot to add your email")
+
+    } else if(!validateEmail(emailValue)){
+        setError("Whoops! Please enter a valid email")
+    } else {
+        successState();
+    }
+}
