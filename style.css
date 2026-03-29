@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@200;300;600;700&display=swap');
 
 /* ===== Custom Properties ===== */
 
@@ -16,6 +16,7 @@
 
     /* Typography */
     --font-family: 'Libre Franklin', sans-serif;
+    --font-weight-extra-light: 200;
     --font-weight-light: 300;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
@@ -24,9 +25,7 @@
     /* Button and inputs */
     --padding-btn-inputs-mobile: 0.85rem 1.75rem;
     --padding-btn-inputs-desktop: 1.2rem 1.75rem;
-
-    /* Breakpoints (for reference in comments) */
-    /* Mobile: 375px | Desktop: 1440px */
+    --border-radius-pill: 40px;
 }
 
 /* ===== Base Reset ===== */
@@ -146,7 +145,7 @@ label[for="email"] {
 
 form input {
     padding: var(--padding-btn-inputs-mobile);
-    border-radius: 40px;
+    border-radius: var(--border-radius-pill);
     border: 1px solid var(--color-blue-200);
     font-family: inherit;
 }
@@ -164,7 +163,7 @@ form input.error {
 form button {
     font-family: inherit;
     padding: var(--padding-btn-inputs-mobile);
-    border-radius: 40px;
+    border-radius: var(--border-radius-pill);
     background-color: var(--color-blue-500);
     color: white;
     border: none;
@@ -250,6 +249,7 @@ footer {
         margin-left: 0.75rem;
         padding: var(--padding-btn-inputs-desktop);
         align-self: flex-start;
+        font-weight: var(--font-weight-semibold);
     }
 }
 
@@ -261,6 +261,7 @@ footer {
 
     h1 {
         font-size: 3rem;
+        font-weight: var(--font-weight-extra-light);
     }
 
     main p {
