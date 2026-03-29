@@ -57,13 +57,12 @@ body {
 .container {
     width: 100%;
     padding: 1rem 2rem;
-    max-width: 650px;
+    max-width: 750px;
     min-width: 350px;
 }
 
 header {
     margin-block: 4rem 2.5rem;
-    /* margin-bottom: 2.5rem; */
     display: flex;
     justify-content: center;
 }
@@ -85,7 +84,7 @@ h1 {
 
 main p {
     font-size: 0.8rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
 }
 
 h1 strong {
@@ -98,7 +97,8 @@ form {
     flex-direction: column;
     width: 100%;
     padding: 1rem;
-    margin-bottom: 3.5rem;
+    margin-bottom: 1.5rem;
+    min-height: 170px;
 }
 
 .form-group {
@@ -111,6 +111,17 @@ form input {
     padding: var(--padding-btn-inputs-mobile);
     border-radius: 40px;
     border: 1px solid var(--color-blue-200);
+    font-family: inherit;
+}
+
+form input::placeholder {
+    opacity: 0.5;
+    color: var(--color-gray-400);
+    font-family: inherit;
+}
+
+form input.error {
+    border: 1px solid var(--color-red-400);
 }
 
 /*
@@ -119,8 +130,7 @@ Posted by dmocksen
 Retrieved 2026-03-28, License - CC BY-SA 4.0
 */
 
-label[for="email"]
-{
+label[for="email"] {
     position: absolute !important;
     width: 1px !important;
     height: 1px !important;
@@ -129,12 +139,6 @@ label[for="email"]
     clip: rect(0, 0, 0, 0) !important;
     white-space: nowrap !important;
     border: 0 !important;
-}
-
-
-input::placeholder {
-    opacity: 0.5;
-    color: var(--color-gray-400);
 }
 
 form button {
@@ -214,18 +218,35 @@ img {
 }
 
 @media (min-width: 600px) {
+
     form {
         flex-direction: row;
+        margin-bottom: 0;
     }
+
     .form-group {
-        flex-grow: 2;
+        flex-grow: 2.5;
+        flex-basis: 0;
         margin-bottom: 0px;
     }
 
-    button {
+    form input,
+    form button {
+        height: fit-content;
+        /* or a fixed value if you want pixel-perfect */
+    }
+
+    form input {
+        padding: var(--padding-btn-inputs-desktop);
+    }
+
+    form button {
         flex-grow: 1;
+        flex-basis: 0;
+        gap: 1rem;
         margin-left: 0.75rem;
         padding: var(--padding-btn-inputs-desktop);
+        align-self: flex-start;
     }
 }
 
@@ -236,7 +257,7 @@ img {
 
     h1 {
         /* margin-bottom: 1rem; */
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     main p {

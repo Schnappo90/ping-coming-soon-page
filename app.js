@@ -24,10 +24,12 @@ form.addEventListener('submit', (e) => {
 function setError(message) {
     errorMsg.textContent = message;
     errorMsg.classList.remove('hidden');
+    emailInput.classList.add('error');
 }
 
 function successState() {
     errorMsg.classList.add('hidden');
+    emailInput.classList.remove('error')
 }
 
 function validateInput() {
