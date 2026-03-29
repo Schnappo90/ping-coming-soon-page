@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
 
-/* =====================
-   Custom Properties
-   ===================== */
+/* ===== Custom Properties ===== */
 
 :root {
     /* Colors - Primary */
@@ -31,9 +29,7 @@
     /* Mobile: 375px | Desktop: 1440px */
 }
 
-/* =====================
-   Base Reset
-   ===================== */
+/* ===== Base Reset ===== */
 
 *,
 *::before,
@@ -42,6 +38,8 @@
     margin: 0;
     padding: 0;
 }
+
+/* ===== Base / Global ===== */
 
 body {
     font-family: var(--font-family);
@@ -54,6 +52,18 @@ body {
     align-items: center;
 }
 
+img {
+    width: 100%;
+}
+
+svg {
+    height: 20px;
+    width: 20px;
+    fill: var(--color-blue-500);
+}
+
+/* ===== Layout ===== */
+
 .container {
     width: 100%;
     padding: 1rem 2rem;
@@ -61,11 +71,19 @@ body {
     min-width: 350px;
 }
 
+/* ===== Header ===== */
+
 header {
     margin-block: 4rem 2.5rem;
     display: flex;
     justify-content: center;
 }
+
+.logo {
+    width: 60px;
+}
+
+/* ===== Main ===== */
 
 main {
     display: flex;
@@ -82,15 +100,17 @@ h1 {
     margin-bottom: 1.5rem;
 }
 
+h1 strong {
+    color: black;
+    font-weight: var(--font-weight-bold);
+}
+
 main p {
     font-size: 0.8rem;
     margin-bottom: 1.25rem;
 }
 
-h1 strong {
-    color: black;
-    font-weight: var(--font-weight-bold);
-}
+/* ===== Form ===== */
 
 form {
     display: flex;
@@ -105,23 +125,6 @@ form {
     display: flex;
     flex-direction: column;
     margin-bottom: 0.75rem;
-}
-
-form input {
-    padding: var(--padding-btn-inputs-mobile);
-    border-radius: 40px;
-    border: 1px solid var(--color-blue-200);
-    font-family: inherit;
-}
-
-form input::placeholder {
-    opacity: 0.5;
-    color: var(--color-gray-400);
-    font-family: inherit;
-}
-
-form input.error {
-    border: 1px solid var(--color-red-400);
 }
 
 /*
@@ -141,6 +144,23 @@ label[for="email"] {
     border: 0 !important;
 }
 
+form input {
+    padding: var(--padding-btn-inputs-mobile);
+    border-radius: 40px;
+    border: 1px solid var(--color-blue-200);
+    font-family: inherit;
+}
+
+form input::placeholder {
+    opacity: 0.5;
+    color: var(--color-gray-400);
+    font-family: inherit;
+}
+
+form input.error {
+    border: 1px solid var(--color-red-400);
+}
+
 form button {
     font-family: inherit;
     padding: var(--padding-btn-inputs-mobile);
@@ -152,6 +172,21 @@ form button {
     -webkit-box-shadow: 0px 5px 15px 0px hsla(223, 87%, 63%, 0.362);
     box-shadow: 0px 5px 15px 0px hsla(223, 87%, 63%, 0.362);
 }
+
+.error-msg {
+    margin-top: 0.4rem;
+    margin-bottom: 1rem;
+    font-size: 0.65rem;
+    text-align: center;
+    font-style: italic;
+    color: var(--color-red-400);
+}
+
+.hidden {
+    display: none;
+}
+
+/* ===== Footer ===== */
 
 footer {
     text-align: center;
@@ -190,32 +225,7 @@ footer {
     font-size: 0.75rem;
 }
 
-svg {
-    height: 20px;
-    width: 20px;
-    fill: var(--color-blue-500)
-}
-
-.error-msg {
-    margin-top: 0.4rem;
-    margin-bottom: 1rem;
-    font-size: 0.65rem;
-    text-align: center;
-    font-style: italic;
-    color: var(--color-red-400)
-}
-
-.hidden {
-    display: none;
-}
-
-.logo {
-    width: 60px;
-}
-
-img {
-    width: 100%;
-}
+/* ===== Media Queries ===== */
 
 @media (min-width: 600px) {
 
@@ -230,12 +240,6 @@ img {
         margin-bottom: 0px;
     }
 
-    form input,
-    form button {
-        height: fit-content;
-        /* or a fixed value if you want pixel-perfect */
-    }
-
     form input {
         padding: var(--padding-btn-inputs-desktop);
     }
@@ -243,7 +247,6 @@ img {
     form button {
         flex-grow: 1;
         flex-basis: 0;
-        gap: 1rem;
         margin-left: 0.75rem;
         padding: var(--padding-btn-inputs-desktop);
         align-self: flex-start;
@@ -251,12 +254,12 @@ img {
 }
 
 @media (min-width: 768px) {
+
     .logo {
         width: 80px;
     }
 
     h1 {
-        /* margin-bottom: 1rem; */
         font-size: 3rem;
     }
 
@@ -265,13 +268,8 @@ img {
         margin-bottom: 1.5rem;
     }
 
-    form input {
-        padding: var(--padding-btn-inputs-desktop);
-    }
-
     input::placeholder {
         font-size: 1rem;
         font-weight: var(--font-weight-light);
     }
-
 }
